@@ -19,4 +19,7 @@ RUN dnf install -q -y --allowerasing --nobest \
   openssl openssl-devel ca-certificates make cmake cpp gcc gcc-c++ zlib zlib-devel brotli brotli-devel python3 nodejs-packaging && \
   dnf update -y && dnf clean all
 
+# to build container images
+RUN dnf install -q -y podman
 RUN npm install -g @janus-idp/cli@latest
+RUN npm install -g yarn
