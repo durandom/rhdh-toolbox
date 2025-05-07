@@ -1,6 +1,7 @@
-# https://github.com/containers/toolbox/blob/main/images/rhel/9.3/Containerfile
+# https://github.com/containers/toolbox/blob/main/images/fedora/f39/Containerfile
 # https://registry.access.redhat.com/ubi9/nodejs-22
-FROM registry.access.redhat.com/ubi9/nodejs-22:9.5-1746535891
+# FROM registry.access.redhat.com/ubi9/nodejs-22:9.5-1746535891
+FROM registry.fedoraproject.org/fedora-toolbox:43
 
 ARG NAME=rhdh-toolbox
 ARG VERSION=0.1
