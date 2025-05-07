@@ -20,6 +20,3 @@ RUN dnf install -q -y --allowerasing --nobest \
   dnf update -y && dnf clean all
 
 RUN npm install -g @janus-idp/cli@latest
-
-ENTRYPOINT [ "/bin/bash" ]
-
