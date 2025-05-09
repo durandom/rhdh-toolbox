@@ -16,10 +16,11 @@ USER 0
 RUN dnf install -q -y --allowerasing --nobest \
   nodejs-devel nodejs-libs \
   # already installed or installed as deps:
-  openssl openssl-devel ca-certificates make cmake cpp gcc gcc-c++ zlib zlib-devel brotli brotli-devel python3 nodejs-packaging && \
+  openssl openssl-devel ca-certificates make cmake cpp gcc gcc-c++ zlib zlib-devel brotli brotli-devel python3 nodejs-packaging \
+  buildah \
+  && \
   dnf update -y && dnf clean all
 
-# to build container images
-RUN dnf install -q -y podman
-RUN npm install -g @janus-idp/cli@latest
-RUN npm install -g yarn
+RUN npm install -g corepack
+RUN yarn set version 3.8.7
+RUN npm install -g @janus-idp/cli@latest @backstage/cli@latest
